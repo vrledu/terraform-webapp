@@ -1,0 +1,233 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_autoscaling_group.private_autoscaling_group" [label = "aws_autoscaling_group.private_autoscaling_group", shape = "box"]
+		"[root] aws_autoscaling_group.public_autoscaling_group" [label = "aws_autoscaling_group.public_autoscaling_group", shape = "box"]
+		"[root] aws_autoscaling_policy.appserver_scaling_policy" [label = "aws_autoscaling_policy.appserver_scaling_policy", shape = "box"]
+		"[root] aws_autoscaling_policy.webserver_scaling_policy" [label = "aws_autoscaling_policy.webserver_scaling_policy", shape = "box"]
+		"[root] aws_cloudformation_stack.tf_sns_topic" [label = "aws_cloudformation_stack.tf_sns_topic", shape = "box"]
+		"[root] aws_elb.app_load_balancer" [label = "aws_elb.app_load_balancer", shape = "box"]
+		"[root] aws_elb.web_load_balancer" [label = "aws_elb.web_load_balancer", shape = "box"]
+		"[root] aws_iam_instance_profile.instance_profile_for_ec2" [label = "aws_iam_instance_profile.instance_profile_for_ec2", shape = "box"]
+		"[root] aws_iam_role.iam_role_for_ec2" [label = "aws_iam_role.iam_role_for_ec2", shape = "box"]
+		"[root] aws_iam_role_policy.iam_role_policy_for_ec2" [label = "aws_iam_role_policy.iam_role_policy_for_ec2", shape = "box"]
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" [label = "aws_launch_configuration.private_launch_configuration_for_app", shape = "box"]
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" [label = "aws_launch_configuration.public_launch_configuration_for_web", shape = "box"]
+		"[root] aws_security_group.elb_security_group" [label = "aws_security_group.elb_security_group", shape = "box"]
+		"[root] aws_security_group.private_security_group_for_ec2" [label = "aws_security_group.private_security_group_for_ec2", shape = "box"]
+		"[root] aws_security_group.public_security_group_for_ec2" [label = "aws_security_group.public_security_group_for_ec2", shape = "box"]
+		"[root] aws_sns_topic.webserver_autoscaling_alert_topic" [label = "aws_sns_topic.webserver_autoscaling_alert_topic", shape = "box"]
+		"[root] data.aws_ami.ami_launch_configuration" [label = "data.aws_ami.ami_launch_configuration", shape = "box"]
+		"[root] data.aws_availability_zones.azs" [label = "data.aws_availability_zones.azs", shape = "box"]
+		"[root] data.template_file.aws_cf_sns_email_stack" [label = "data.template_file.aws_cf_sns_email_stack", shape = "box"]
+		"[root] data.terraform_remote_state.instance" [label = "data.terraform_remote_state.instance", shape = "box"]
+		"[root] module.vpc.aws_internet_gateway.internet-gateway" [label = "module.vpc.aws_internet_gateway.internet-gateway", shape = "box"]
+		"[root] module.vpc.aws_route.public-internet-gateway" [label = "module.vpc.aws_route.public-internet-gateway", shape = "box"]
+		"[root] module.vpc.aws_route_table.private-route-table" [label = "module.vpc.aws_route_table.private-route-table", shape = "box"]
+		"[root] module.vpc.aws_route_table.public-route-table" [label = "module.vpc.aws_route_table.public-route-table", shape = "box"]
+		"[root] module.vpc.aws_route_table_association.private-subnet-1-association" [label = "module.vpc.aws_route_table_association.private-subnet-1-association", shape = "box"]
+		"[root] module.vpc.aws_route_table_association.private-subnet-2-association" [label = "module.vpc.aws_route_table_association.private-subnet-2-association", shape = "box"]
+		"[root] module.vpc.aws_route_table_association.private-subnet-3-association" [label = "module.vpc.aws_route_table_association.private-subnet-3-association", shape = "box"]
+		"[root] module.vpc.aws_route_table_association.public-subnet-1-association" [label = "module.vpc.aws_route_table_association.public-subnet-1-association", shape = "box"]
+		"[root] module.vpc.aws_route_table_association.public-subnet-2-association" [label = "module.vpc.aws_route_table_association.public-subnet-2-association", shape = "box"]
+		"[root] module.vpc.aws_route_table_association.public-subnet-3-association" [label = "module.vpc.aws_route_table_association.public-subnet-3-association", shape = "box"]
+		"[root] module.vpc.aws_subnet.private-subnet-1" [label = "module.vpc.aws_subnet.private-subnet-1", shape = "box"]
+		"[root] module.vpc.aws_subnet.private-subnet-2" [label = "module.vpc.aws_subnet.private-subnet-2", shape = "box"]
+		"[root] module.vpc.aws_subnet.private-subnet-3" [label = "module.vpc.aws_subnet.private-subnet-3", shape = "box"]
+		"[root] module.vpc.aws_subnet.public-subnet-1" [label = "module.vpc.aws_subnet.public-subnet-1", shape = "box"]
+		"[root] module.vpc.aws_subnet.public-subnet-2" [label = "module.vpc.aws_subnet.public-subnet-2", shape = "box"]
+		"[root] module.vpc.aws_subnet.public-subnet-3" [label = "module.vpc.aws_subnet.public-subnet-3", shape = "box"]
+		"[root] module.vpc.aws_vpc.web-app-vpc" [label = "module.vpc.aws_vpc.web-app-vpc", shape = "box"]
+		"[root] module.vpc.data.aws_availability_zones.azs" [label = "module.vpc.data.aws_availability_zones.azs", shape = "box"]
+		"[root] module.vpc.data.terraform_remote_state.infra" [label = "module.vpc.data.terraform_remote_state.infra", shape = "box"]
+		"[root] module.vpc.local.azs_names" [label = "module.vpc.local.azs_names", shape = "note"]
+		"[root] module.vpc.output.private_subnet_1" [label = "module.vpc.output.private_subnet_1", shape = "note"]
+		"[root] module.vpc.output.private_subnet_2" [label = "module.vpc.output.private_subnet_2", shape = "note"]
+		"[root] module.vpc.output.private_subnet_3" [label = "module.vpc.output.private_subnet_3", shape = "note"]
+		"[root] module.vpc.output.public_subnet_1" [label = "module.vpc.output.public_subnet_1", shape = "note"]
+		"[root] module.vpc.output.public_subnet_2" [label = "module.vpc.output.public_subnet_2", shape = "note"]
+		"[root] module.vpc.output.public_subnet_3" [label = "module.vpc.output.public_subnet_3", shape = "note"]
+		"[root] module.vpc.output.vpc_cidr" [label = "module.vpc.output.vpc_cidr", shape = "note"]
+		"[root] module.vpc.output.vpc_id" [label = "module.vpc.output.vpc_id", shape = "note"]
+		"[root] module.vpc.provider.aws" [label = "module.vpc.provider.aws", shape = "diamond"]
+		"[root] module.vpc.var.nat_gateway_private_ip" [label = "module.vpc.var.nat_gateway_private_ip", shape = "note"]
+		"[root] module.vpc.var.private_subnet_1_cidr" [label = "module.vpc.var.private_subnet_1_cidr", shape = "note"]
+		"[root] module.vpc.var.private_subnet_2_cidr" [label = "module.vpc.var.private_subnet_2_cidr", shape = "note"]
+		"[root] module.vpc.var.private_subnet_3_cidr" [label = "module.vpc.var.private_subnet_3_cidr", shape = "note"]
+		"[root] module.vpc.var.public_subnet_1_cidr" [label = "module.vpc.var.public_subnet_1_cidr", shape = "note"]
+		"[root] module.vpc.var.public_subnet_2_cidr" [label = "module.vpc.var.public_subnet_2_cidr", shape = "note"]
+		"[root] module.vpc.var.public_subnet_3_cidr" [label = "module.vpc.var.public_subnet_3_cidr", shape = "note"]
+		"[root] module.vpc.var.region" [label = "module.vpc.var.region", shape = "note"]
+		"[root] module.vpc.var.remote_state_bucket" [label = "module.vpc.var.remote_state_bucket", shape = "note"]
+		"[root] module.vpc.var.remote_state_key" [label = "module.vpc.var.remote_state_key", shape = "note"]
+		"[root] module.vpc.var.vpc_cidr" [label = "module.vpc.var.vpc_cidr", shape = "note"]
+		"[root] module.vpc.var.vpc_tenancy" [label = "module.vpc.var.vpc_tenancy", shape = "note"]
+		"[root] output.aws_ami_id" [label = "output.aws_ami_id", shape = "note"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] provider.template" [label = "provider.template", shape = "diamond"]
+		"[root] provider.terraform" [label = "provider.terraform", shape = "diamond"]
+		"[root] var.ec2_instance_type" [label = "var.ec2_instance_type", shape = "note"]
+		"[root] var.key_pair_name" [label = "var.key_pair_name", shape = "note"]
+		"[root] var.max_instance_size" [label = "var.max_instance_size", shape = "note"]
+		"[root] var.min_instance_size" [label = "var.min_instance_size", shape = "note"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.remote_state_bucket" [label = "var.remote_state_bucket", shape = "note"]
+		"[root] var.remote_state_key" [label = "var.remote_state_key", shape = "note"]
+		"[root] var.sns_subscription_email_address_list" [label = "var.sns_subscription_email_address_list", shape = "note"]
+		"[root] var.sns_subscription_protocol" [label = "var.sns_subscription_protocol", shape = "note"]
+		"[root] var.sns_topic_display_name" [label = "var.sns_topic_display_name", shape = "note"]
+		"[root] var.sns_topic_name" [label = "var.sns_topic_name", shape = "note"]
+		"[root] var.userdata_for_app" [label = "var.userdata_for_app", shape = "note"]
+		"[root] var.userdata_for_web" [label = "var.userdata_for_web", shape = "note"]
+		"[root] aws_autoscaling_group.private_autoscaling_group" -> "[root] aws_elb.app_load_balancer"
+		"[root] aws_autoscaling_group.private_autoscaling_group" -> "[root] aws_launch_configuration.private_launch_configuration_for_app"
+		"[root] aws_autoscaling_group.private_autoscaling_group" -> "[root] var.max_instance_size"
+		"[root] aws_autoscaling_group.private_autoscaling_group" -> "[root] var.min_instance_size"
+		"[root] aws_autoscaling_group.public_autoscaling_group" -> "[root] aws_elb.web_load_balancer"
+		"[root] aws_autoscaling_group.public_autoscaling_group" -> "[root] aws_launch_configuration.public_launch_configuration_for_web"
+		"[root] aws_autoscaling_group.public_autoscaling_group" -> "[root] var.max_instance_size"
+		"[root] aws_autoscaling_group.public_autoscaling_group" -> "[root] var.min_instance_size"
+		"[root] aws_autoscaling_policy.appserver_scaling_policy" -> "[root] aws_autoscaling_group.private_autoscaling_group"
+		"[root] aws_autoscaling_policy.webserver_scaling_policy" -> "[root] aws_autoscaling_group.public_autoscaling_group"
+		"[root] aws_cloudformation_stack.tf_sns_topic" -> "[root] data.template_file.aws_cf_sns_email_stack"
+		"[root] aws_cloudformation_stack.tf_sns_topic" -> "[root] provider.aws"
+		"[root] aws_elb.app_load_balancer" -> "[root] aws_security_group.elb_security_group"
+		"[root] aws_elb.app_load_balancer" -> "[root] module.vpc.output.private_subnet_1"
+		"[root] aws_elb.app_load_balancer" -> "[root] module.vpc.output.private_subnet_2"
+		"[root] aws_elb.app_load_balancer" -> "[root] module.vpc.output.private_subnet_3"
+		"[root] aws_elb.web_load_balancer" -> "[root] aws_security_group.elb_security_group"
+		"[root] aws_elb.web_load_balancer" -> "[root] module.vpc.output.public_subnet_1"
+		"[root] aws_elb.web_load_balancer" -> "[root] module.vpc.output.public_subnet_2"
+		"[root] aws_elb.web_load_balancer" -> "[root] module.vpc.output.public_subnet_3"
+		"[root] aws_iam_instance_profile.instance_profile_for_ec2" -> "[root] aws_iam_role.iam_role_for_ec2"
+		"[root] aws_iam_role.iam_role_for_ec2" -> "[root] provider.aws"
+		"[root] aws_iam_role_policy.iam_role_policy_for_ec2" -> "[root] aws_iam_role.iam_role_for_ec2"
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" -> "[root] aws_iam_instance_profile.instance_profile_for_ec2"
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" -> "[root] aws_security_group.private_security_group_for_ec2"
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" -> "[root] data.aws_ami.ami_launch_configuration"
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" -> "[root] var.ec2_instance_type"
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" -> "[root] var.key_pair_name"
+		"[root] aws_launch_configuration.private_launch_configuration_for_app" -> "[root] var.userdata_for_app"
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" -> "[root] aws_iam_instance_profile.instance_profile_for_ec2"
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" -> "[root] aws_security_group.public_security_group_for_ec2"
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" -> "[root] data.aws_ami.ami_launch_configuration"
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" -> "[root] var.ec2_instance_type"
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" -> "[root] var.key_pair_name"
+		"[root] aws_launch_configuration.public_launch_configuration_for_web" -> "[root] var.userdata_for_web"
+		"[root] aws_security_group.elb_security_group" -> "[root] module.vpc.output.vpc_id"
+		"[root] aws_security_group.elb_security_group" -> "[root] provider.aws"
+		"[root] aws_security_group.private_security_group_for_ec2" -> "[root] aws_security_group.public_security_group_for_ec2"
+		"[root] aws_security_group.public_security_group_for_ec2" -> "[root] module.vpc.output.vpc_id"
+		"[root] aws_security_group.public_security_group_for_ec2" -> "[root] provider.aws"
+		"[root] aws_sns_topic.webserver_autoscaling_alert_topic" -> "[root] provider.aws"
+		"[root] data.aws_ami.ami_launch_configuration" -> "[root] provider.aws"
+		"[root] data.aws_availability_zones.azs" -> "[root] provider.aws"
+		"[root] data.template_file.aws_cf_sns_email_stack" -> "[root] provider.template"
+		"[root] data.template_file.aws_cf_sns_email_stack" -> "[root] var.sns_subscription_email_address_list"
+		"[root] data.template_file.aws_cf_sns_email_stack" -> "[root] var.sns_subscription_protocol"
+		"[root] data.template_file.aws_cf_sns_email_stack" -> "[root] var.sns_topic_display_name"
+		"[root] data.template_file.aws_cf_sns_email_stack" -> "[root] var.sns_topic_name"
+		"[root] data.terraform_remote_state.instance" -> "[root] provider.terraform"
+		"[root] data.terraform_remote_state.instance" -> "[root] var.region"
+		"[root] data.terraform_remote_state.instance" -> "[root] var.remote_state_bucket"
+		"[root] data.terraform_remote_state.instance" -> "[root] var.remote_state_key"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_autoscaling_policy.appserver_scaling_policy"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_autoscaling_policy.webserver_scaling_policy"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_cloudformation_stack.tf_sns_topic"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy.iam_role_policy_for_ec2"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_sns_topic.webserver_autoscaling_alert_topic"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] data.aws_availability_zones.azs"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] data.terraform_remote_state.instance"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route.public-internet-gateway"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table.private-route-table"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table_association.private-subnet-1-association"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table_association.private-subnet-2-association"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table_association.private-subnet-3-association"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table_association.public-subnet-1-association"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table_association.public-subnet-2-association"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.aws_route_table_association.public-subnet-3-association"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.data.terraform_remote_state.infra"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.output.vpc_cidr"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.var.nat_gateway_private_ip"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] output.aws_ami_id"
+		"[root] module.vpc.aws_internet_gateway.internet-gateway" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_route.public-internet-gateway" -> "[root] module.vpc.aws_internet_gateway.internet-gateway"
+		"[root] module.vpc.aws_route.public-internet-gateway" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table.private-route-table" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_route_table.public-route-table" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_route_table_association.private-subnet-1-association" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table_association.private-subnet-1-association" -> "[root] module.vpc.aws_subnet.private-subnet-1"
+		"[root] module.vpc.aws_route_table_association.private-subnet-2-association" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table_association.private-subnet-2-association" -> "[root] module.vpc.aws_subnet.private-subnet-2"
+		"[root] module.vpc.aws_route_table_association.private-subnet-3-association" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table_association.private-subnet-3-association" -> "[root] module.vpc.aws_subnet.private-subnet-3"
+		"[root] module.vpc.aws_route_table_association.public-subnet-1-association" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table_association.public-subnet-1-association" -> "[root] module.vpc.aws_subnet.public-subnet-1"
+		"[root] module.vpc.aws_route_table_association.public-subnet-2-association" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table_association.public-subnet-2-association" -> "[root] module.vpc.aws_subnet.public-subnet-2"
+		"[root] module.vpc.aws_route_table_association.public-subnet-3-association" -> "[root] module.vpc.aws_route_table.public-route-table"
+		"[root] module.vpc.aws_route_table_association.public-subnet-3-association" -> "[root] module.vpc.aws_subnet.public-subnet-3"
+		"[root] module.vpc.aws_subnet.private-subnet-1" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_subnet.private-subnet-1" -> "[root] module.vpc.local.azs_names"
+		"[root] module.vpc.aws_subnet.private-subnet-1" -> "[root] module.vpc.var.private_subnet_1_cidr"
+		"[root] module.vpc.aws_subnet.private-subnet-2" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_subnet.private-subnet-2" -> "[root] module.vpc.local.azs_names"
+		"[root] module.vpc.aws_subnet.private-subnet-2" -> "[root] module.vpc.var.private_subnet_2_cidr"
+		"[root] module.vpc.aws_subnet.private-subnet-3" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_subnet.private-subnet-3" -> "[root] module.vpc.local.azs_names"
+		"[root] module.vpc.aws_subnet.private-subnet-3" -> "[root] module.vpc.var.private_subnet_3_cidr"
+		"[root] module.vpc.aws_subnet.public-subnet-1" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_subnet.public-subnet-1" -> "[root] module.vpc.local.azs_names"
+		"[root] module.vpc.aws_subnet.public-subnet-1" -> "[root] module.vpc.var.public_subnet_1_cidr"
+		"[root] module.vpc.aws_subnet.public-subnet-2" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_subnet.public-subnet-2" -> "[root] module.vpc.local.azs_names"
+		"[root] module.vpc.aws_subnet.public-subnet-2" -> "[root] module.vpc.var.public_subnet_2_cidr"
+		"[root] module.vpc.aws_subnet.public-subnet-3" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.aws_subnet.public-subnet-3" -> "[root] module.vpc.local.azs_names"
+		"[root] module.vpc.aws_subnet.public-subnet-3" -> "[root] module.vpc.var.public_subnet_3_cidr"
+		"[root] module.vpc.aws_vpc.web-app-vpc" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.aws_vpc.web-app-vpc" -> "[root] module.vpc.var.vpc_cidr"
+		"[root] module.vpc.aws_vpc.web-app-vpc" -> "[root] module.vpc.var.vpc_tenancy"
+		"[root] module.vpc.data.aws_availability_zones.azs" -> "[root] module.vpc.provider.aws"
+		"[root] module.vpc.data.terraform_remote_state.infra" -> "[root] module.vpc.var.region"
+		"[root] module.vpc.data.terraform_remote_state.infra" -> "[root] module.vpc.var.remote_state_bucket"
+		"[root] module.vpc.data.terraform_remote_state.infra" -> "[root] module.vpc.var.remote_state_key"
+		"[root] module.vpc.data.terraform_remote_state.infra" -> "[root] provider.terraform"
+		"[root] module.vpc.local.azs_names" -> "[root] module.vpc.data.aws_availability_zones.azs"
+		"[root] module.vpc.output.private_subnet_1" -> "[root] module.vpc.aws_subnet.private-subnet-1"
+		"[root] module.vpc.output.private_subnet_2" -> "[root] module.vpc.aws_subnet.private-subnet-2"
+		"[root] module.vpc.output.private_subnet_3" -> "[root] module.vpc.aws_subnet.private-subnet-3"
+		"[root] module.vpc.output.public_subnet_1" -> "[root] module.vpc.aws_subnet.public-subnet-1"
+		"[root] module.vpc.output.public_subnet_2" -> "[root] module.vpc.aws_subnet.public-subnet-2"
+		"[root] module.vpc.output.public_subnet_3" -> "[root] module.vpc.aws_subnet.public-subnet-3"
+		"[root] module.vpc.output.vpc_cidr" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.output.vpc_id" -> "[root] module.vpc.aws_vpc.web-app-vpc"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route.public-internet-gateway"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table.private-route-table"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table_association.private-subnet-1-association"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table_association.private-subnet-2-association"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table_association.private-subnet-3-association"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table_association.public-subnet-1-association"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table_association.public-subnet-2-association"
+		"[root] module.vpc.provider.aws (close)" -> "[root] module.vpc.aws_route_table_association.public-subnet-3-association"
+		"[root] module.vpc.provider.aws" -> "[root] module.vpc.var.region"
+		"[root] output.aws_ami_id" -> "[root] data.aws_ami.ami_launch_configuration"
+		"[root] provider.aws (close)" -> "[root] aws_autoscaling_policy.appserver_scaling_policy"
+		"[root] provider.aws (close)" -> "[root] aws_autoscaling_policy.webserver_scaling_policy"
+		"[root] provider.aws (close)" -> "[root] aws_cloudformation_stack.tf_sns_topic"
+		"[root] provider.aws (close)" -> "[root] aws_iam_role_policy.iam_role_policy_for_ec2"
+		"[root] provider.aws (close)" -> "[root] aws_sns_topic.webserver_autoscaling_alert_topic"
+		"[root] provider.aws (close)" -> "[root] data.aws_availability_zones.azs"
+		"[root] provider.aws" -> "[root] var.region"
+		"[root] provider.template (close)" -> "[root] data.template_file.aws_cf_sns_email_stack"
+		"[root] provider.terraform (close)" -> "[root] data.terraform_remote_state.instance"
+		"[root] provider.terraform (close)" -> "[root] module.vpc.data.terraform_remote_state.infra"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] module.vpc.provider.aws (close)"
+		"[root] root" -> "[root] provider.aws (close)"
+		"[root] root" -> "[root] provider.template (close)"
+		"[root] root" -> "[root] provider.terraform (close)"
+	}
+}
+
