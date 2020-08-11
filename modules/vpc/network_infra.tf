@@ -124,7 +124,6 @@ resource "aws_route_table_association" "private-subnet-3-association" {
   subnet_id      = aws_subnet.private-subnet-3.id
 }
 
-/*
 #eip
 resource "aws_eip" "elastic-ip-addr-nat-gateway" {
   vpc                       = true
@@ -136,9 +135,8 @@ resource "aws_eip" "elastic-ip-addr-nat-gateway" {
 
 #nat-gateway
 resource "aws_nat_gateway" "nat-gateway" {
-  count         = 1
   allocation_id = aws_eip.elastic-ip-addr-nat-gateway.id
-  subnet_id     = aws_subnet.public-subnets[count.index].id
+  subnet_id     = aws_subnet.public-subnet-1.id
   tags = {
     Name = "Nat-Gateway"
   }
@@ -151,7 +149,6 @@ resource "aws_route" "nat-gateway-route" {
   nat_gateway_id         = aws_nat_gateway.nat-gateway.id
   destination_cidr_block = "0.0.0.0/0"
 }
-*/
 
 resource "aws_internet_gateway" "internet-gateway" {
   vpc_id = aws_vpc.web-app-vpc.id
