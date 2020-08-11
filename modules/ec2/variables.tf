@@ -4,12 +4,12 @@ variable "region" {
 }
 
 variable "remote_state_bucket" {
-  default     = "vijay-terraform-remote-state-2020-08"
+  default     = "<<s3 bucket name>>"
   description = "bucket name for remote state"
 }
 
 variable "remote_state_key" {
-  default     = "terraform/web_app_infra.tfstate"
+  default     = "<<key name>>"
   description = "key name for remote state"
 }
 
@@ -45,7 +45,7 @@ variable "min_instance_size" {
 
 variable "sns_subscription_email_address_list" {
   type        = list(string)
-  default     = ["vijayaraghavan.lakshman@gmail.com"]
+  default     = ["<<email_id>>"]
   description = "List of email addresses"
 }
 
